@@ -2,12 +2,36 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>API Dashboard</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>API Dashboard</h1>
-  <p>First project for internship preparation.</p>
+  <main class="container">
+    <h1>API Dashboard</h1>
+    <p class="subtitle">Search a GitHub user and view basic profile data.</p>
+
+    <form id="searchForm" class="row">
+      <input id="usernameInput" type="text" placeholder="e.g. torvalds" required />
+      <button type="submit">Search</button>
+    </form>
+
+    <div id="status" class="status" aria-live="polite"></div>
+
+    <section id="result" class="card hidden">
+      <img id="avatar" alt="User avatar" />
+      <div class="info">
+        <h2 id="name"></h2>
+        <p id="bio"></p>
+        <div class="meta">
+          <span id="repos"></span>
+          <span id="followers"></span>
+          <span id="following"></span>
+        </div>
+        <a id="profileLink" target="_blank" rel="noreferrer">View on GitHub</a>
+      </div>
+    </section>
+  </main>
 
   <script src="script.js"></script>
 </body>
